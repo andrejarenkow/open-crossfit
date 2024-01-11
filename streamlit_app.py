@@ -2,6 +2,7 @@ import pandas as pd
 import plotly.express as px
 import requests
 import numpy as np
+import streamlit as st
 
 # Configurações da página
 st.set_page_config(
