@@ -1,5 +1,4 @@
 import pandas as pd
-import seaborn as sns
 import plotly.express as px
 import requests
 import numpy as np
