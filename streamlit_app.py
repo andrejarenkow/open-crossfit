@@ -167,7 +167,7 @@ fig_2.update_layout(
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
-    yaxis_title="Nome do box",
+    #yaxis_title="Nome do box",
     xaxis_title="Repetições",
     showlegend=False
 )
@@ -235,7 +235,7 @@ fig_3.update_layout(
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
-    yaxis_title="Nome do box",
+    #yaxis_title="Nome do box",
     xaxis_title="Tempo (segundos)",
     showlegend=False
 )
