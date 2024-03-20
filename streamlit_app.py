@@ -18,6 +18,14 @@ col1, col2, col3 = st.columns([1,4,1])
 col2.header('Open Crossfit 24')
 #col3.image('logo_estado (3).png', width=300)
 
+# Função para acessar os valores da lista
+def acessar_latitude(lista):
+    return lista[1]
+
+# Função para acessar os valores da lista
+def acessar_longitude(lista):
+    return lista[0]
+
 # Lista afiliados
 request = 'https://www.crossfit.com/wp-content/uploads/affiliates.json'
 r = requests.get(request)
