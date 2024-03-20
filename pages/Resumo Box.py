@@ -53,6 +53,10 @@ with st.sidebar:
 
 # Limpeza e tratamento dos dados
 dados = pd.read_parquet('dados_crossfit.parquet')
+dados['scaled_descrito_1'] = dados_fizeram_1['scaled_1'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
+dados['scaled_descrito_2'] = dados_fizeram_1['scaled_2'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
+dados['scaled_descrito_3'] = dados_fizeram_1['scaled_3'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
+
 dados['age'] = pd.to_numeric(dados['age'], errors='coerce')
 dados['score_1'] = pd.to_numeric(dados['score_1'], errors='coerce')
 dados['score_2'] = pd.to_numeric(dados['score_2'], errors='coerce')
