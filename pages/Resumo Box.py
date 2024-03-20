@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state='expanded'
 ) 
-col1, col2, col3 = st.columns([3,4,3])
+col1, col2, col3 = st.columns([2,4,2])
 
 
 
