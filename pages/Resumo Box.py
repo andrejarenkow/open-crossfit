@@ -50,8 +50,12 @@ dados['score_1'] = pd.to_numeric(dados['score_1'], errors='coerce')
 dados['score_2'] = pd.to_numeric(dados['score_2'], errors='coerce')
 
 try:
-  dados_box = dados[dados['affiliateName']==box]
-  dados_box
+    dados_box = dados[dados['affiliateName']==box]
+
+    #total alunos inscritos
+    total_alunos_inscritos = len(dados_box)
+    st.metric('Total atletas',total_alunos_inscritos)
+    dados_box
 
 except:
   st.subheader('Não há dados sobre este box na Open 2024')
