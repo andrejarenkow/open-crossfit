@@ -88,9 +88,8 @@ try:
     # Criando a tabela dinâmica
     df_barras = df_barras.value_counts(['Categoria','Prova']).reset_index()
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
-    df_barras
-    #fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
-    #st.plotly_chart(fig_categorias)
+    fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
+    st.plotly_chart(fig_categorias)
     
     dados_box
 
