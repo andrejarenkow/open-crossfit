@@ -93,7 +93,7 @@ for afiliado in lista_afiliados:
 fig_1 = ridgeplot(
     samples=lista_samples,
     #bandwidth=4,
-    kde_points=np.linspace(300, 1300, 500),
+    kde_points=np.linspace(0, 1300, 500),
     colorscale="viridis",
     colormode="row-index",
     coloralpha=1,
@@ -105,7 +105,7 @@ fig_1 = ridgeplot(
 # Again, update the figure layout to your liking here
 fig_1.update_layout(
     title=f"Comparativo Open 24.1, {categoria}, Porto Alegre, RS",
-    height=650,
+    height=1000,
     width=800,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
@@ -173,5 +173,6 @@ fig_2.update_layout(
 )
 
 # Show us the work!
-st.plotly_chart(fig_1)
-st.plotly_chart(fig_2)
+col1, col2, col3 = st.columns(3)
+col1.plotly_chart(fig_1)
+col2.plotly_chart(fig_2)
