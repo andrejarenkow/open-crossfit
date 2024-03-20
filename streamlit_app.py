@@ -55,6 +55,7 @@ dados['score_2'] = pd.to_numeric(dados['score_2'], errors='coerce')
 # Score 24.1
 dados_fizeram_1 = dados[dados['score_1']>0].reset_index(drop=True)
 scores = dados_fizeram_1['scoreDisplay_1'].str.split(' reps', expand=True)[0].str.replace(' - s','').str.replace(' - f','')
+dados_fizeram_1['scaled_descrito'] = dados_fizeram_1['scaled_1'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
 segundos = []
 for i in scores:
   #print(i)
