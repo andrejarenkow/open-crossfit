@@ -14,18 +14,7 @@ st.set_page_config(
 ) 
 col1, col2, col3 = st.columns([1,4,1])
 
-# Using object notation
-add_selectbox = st.sidebar.selectbox(
-    "How would you like to be contacted?",
-    ("Email", "Home phone", "Mobile phone")
-)
 
-# Using "with" notation
-with st.sidebar:
-    add_radio = st.radio(
-        "Choose a shipping method",
-        ("Standard (5-15 days)", "Express (2-5 days)")
-    )
 
 
 col2.header('Open Crossfit 24')
@@ -50,9 +39,11 @@ df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
 
-pais = st.selectbox('Selecione o país', options=sorted(df['country'].unique()), index=17)
-cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique(), default = ['PORTO ALEGRE', 'CAXIAS DO SUL'])
-categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
+# Using "with" notation
+with st.sidebar:
+    pais = st.selectbox('Selecione o país', options=sorted(df['country'].unique()), index=17)
+    cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique(), default = ['PORTO ALEGRE', 'CAXIAS DO SUL'])
+    categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
 
 df_afiliados_cidade = df[df['city'].isin(cidade)]
