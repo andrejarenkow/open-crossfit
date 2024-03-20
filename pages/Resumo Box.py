@@ -101,11 +101,11 @@ try:
     
     dados_tabela_box = dados_box[['competitorName','profilePicS3key', 'affiliateName', 'age','scaled_descrito_1','scoreDisplay_1','scaled_descrito_2', 'scoreDisplay_2','scaled_descrito_3', 'scoreDisplay_3']]
     st.dataframe(dados_tabela_box,
-                 column_config={
-        "profilePicS3key": st.column_config.ImageColumn(
-            "Imagem",
-        )
-    },
+                 #column_config={
+                 #   "profilePicS3key": st.column_config.ImageColumn(
+                 #                       "Imagem",
+        #)
+    #},
     hide_index=True,
                 )
 
