@@ -161,7 +161,7 @@ fig_2 = ridgeplot(
     coloralpha=0.8,
     labels=lista_nomes_afiliados_selecionados,
     linewidth=2,
-    spacing=0.2,
+    spacing=0.5,
 )
 
 # Again, update the figure layout to your liking here
