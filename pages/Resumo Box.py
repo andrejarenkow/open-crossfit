@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state='expanded'
 ) 
-col1, col2, col3 = st.columns([1,4,1])
+col1, col2, col3 = st.columns([3,4,3])
 
 
 
@@ -72,7 +72,7 @@ def df_grafico_barras(df, coluna, nome_prova):
 
 try:
     dados_box = dados[dados['affiliateName']==box]
-    st.header(f'Open Crossfit 24 - Estatísticas {box}')
+    col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
