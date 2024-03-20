@@ -37,7 +37,7 @@ df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
 
-cidade = st.selectbox('Selecione a cidade', options=sorted(df['city'].unique(), index=None))
+cidade = st.selectbox('Selecione a cidade', options=sorted(df['city'].unique()), index=None)
 categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
 
