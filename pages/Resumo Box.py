@@ -86,7 +86,7 @@ try:
                            df_grafico_barras(dados_box, 'scaled_descrito_2', '24.2'),
                            df_grafico_barras(dados_box, 'scaled_descrito_3', '24.3')])
     # Criando a tabela dinâmica
-    df_barras = dados_box.value_counts(['Categoria','Prova']).reset_index()
+    df_barras = df_barras.value_counts(['Categoria','Prova']).reset_index()
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
     df_barras
     #fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
