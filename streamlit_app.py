@@ -106,7 +106,7 @@ fig_1 = ridgeplot(
 fig_1.update_layout(
     title=f"Comparativo Open 24.1, {categoria}, Porto Alegre, RS",
     height=1000,
-    width=800,
+    width=400,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
@@ -163,7 +163,7 @@ fig_2 = ridgeplot(
 fig_2.update_layout(
     title=f"Comparativo Open 24.2, {categoria}, {cidade}",
     height=1000,
-    width=800,
+    width=400,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
