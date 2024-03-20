@@ -90,8 +90,9 @@ try:
     df_barras.reset_index(inplace=True)
     df_barras.columns.name = None
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
-    fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
-    st.plotly_chart(fig_categorias)
+    df_barras
+    #fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
+    #st.plotly_chart(fig_categorias)
     
     dados_box
 
