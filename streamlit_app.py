@@ -61,7 +61,7 @@ dados_fizeram_2['scaled_descrito_2'] = dados_fizeram_1['scaled_2'].replace({'0':
 # Plotando 24.2
 # Definindo a função para criar o array que vai no gráfico
 def valores_array_box(nome_box, categoria):
-  scores = pd.Series(dados_fizeram_2[(dados_fizeram_2['affiliateName']==nome_box)&(dados_fizeram_2['scaled_descrito_2'].isin(categoria)]['score_reps'], name=nome_box).to_numpy()
+  scores = pd.Series(dados_fizeram_2[(dados_fizeram_2['affiliateName']==nome_box)&(dados_fizeram_2['scaled_descrito_2'].isin(categoria))]['score_reps'], name=nome_box).to_numpy()
 
   return scores
 
