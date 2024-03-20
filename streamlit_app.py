@@ -164,7 +164,7 @@ fig_2.update_layout(
     title="WOD 24.2",
     height=1000,
     width=400,
-    plot_bgcolor="rgba(255, 255, 255, 0.0)",
+    plot_bgcolor="rgba(0, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     #yaxis_title="Nome do box",
