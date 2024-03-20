@@ -97,7 +97,7 @@ fig = ridgeplot(
 # Again, update the figure layout to your liking here
 fig.update_layout(
     title=f"Comparativo Open 24.2, {categoria}, {cidade}",
-    #height=650,
+    height=1000,
     width=800,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
