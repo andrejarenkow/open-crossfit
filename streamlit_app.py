@@ -85,7 +85,7 @@ for afiliado in lista_afiliados:
     lista_samples.append(scores_afiliado)
     mediana = int(np.median(scores_afiliado))
     inscritos = len(scores_afiliado)
-    lista_nomes_afiliados_selecionados.append(f'{afiliado} - Mediana {mediana} segundos - {inscritos} atletas')
+    lista_nomes_afiliados_selecionados.append(f'{afiliado}')# - Mediana {mediana} reps - {inscritos} atletas')
 
 
 # Not only does 'ridgeplot(...)' come configured with sensible defaults
@@ -142,7 +142,7 @@ for afiliado in lista_afiliados:
     lista_samples.append(scores_afiliado)
     mediana = int(np.median(scores_afiliado))
     inscritos = len(scores_afiliado)
-    lista_nomes_afiliados_selecionados.append(f'{afiliado}'# - Mediana {mediana} reps - {inscritos} atletas')
+    lista_nomes_afiliados_selecionados.append(f'{afiliado}')# - Mediana {mediana} reps - {inscritos} atletas')
 
 
 # Not only does 'ridgeplot(...)' come configured with sensible defaults
