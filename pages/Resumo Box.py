@@ -78,7 +78,7 @@ try:
     st.metric('Total atletas',total_alunos_inscritos)
 
     # Gráfico de pizza por gênero
-    fig_gender = px.pie(dados_box, names='gender')
+    fig_gender = px.pie(dados_box, names='gender', 'Divisão de atletas por gênero')
     st.plotly_chart(fig_gender)
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
@@ -88,7 +88,7 @@ try:
     # Criando a tabela dinâmica
     df_barras = df_barras.value_counts(['Categoria','Prova']).reset_index()
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
-    fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
+    fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria", title='Número de atletas por categoria por prova')
     st.plotly_chart(fig_categorias)
     
     dados_box
