@@ -85,7 +85,7 @@ for afiliado in lista_afiliados:
 fig = ridgeplot(
     samples=lista_samples,
     #bandwidth=4,
-    kde_points=np.linspace(300, 1300, 500),
+    kde_points=np.linspace(0, 1300, 500),
     colorscale="viridis",
     colormode="row-index",
     coloralpha=1,
