@@ -104,7 +104,7 @@ fig_1 = ridgeplot(
 
 # Again, update the figure layout to your liking here
 fig_1.update_layout(
-    title=f"Comparativo Open 24.1, {categoria}, Porto Alegre, RS",
+    title="WOD 24.1",
     height=1000,
     width=400,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
@@ -161,7 +161,7 @@ fig_2 = ridgeplot(
 
 # Again, update the figure layout to your liking here
 fig_2.update_layout(
-    title=f"Comparativo Open 24.2, {categoria}, {cidade}",
+    title="WOD 24.2",
     height=1000,
     width=400,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
@@ -173,6 +173,7 @@ fig_2.update_layout(
 )
 
 # Show us the work!
+st.subheader(f'Comparativo Open 2024, Categorias {categoria}, {cidade}')
 col1, col2, col3 = st.columns(3)
 col1.plotly_chart(fig_1)
 col2.plotly_chart(fig_2)
