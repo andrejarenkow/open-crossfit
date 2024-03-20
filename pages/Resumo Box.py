@@ -81,8 +81,8 @@ try:
     st.metric('Total atletas',total_alunos_inscritos)
 
     # Gráfico de pizza por gênero
-    fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero')
-    c1.plotly_chart(fig_gender, width = 400, theme=None)
+    fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero', width=400)
+    c1.plotly_chart(fig_gender, theme=None)
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
     df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', '24.1'),
