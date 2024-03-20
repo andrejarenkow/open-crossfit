@@ -44,9 +44,11 @@ with st.sidebar:
     df_box_selecionado = df[df['name']==box]
     try:
         url_imagem = df_box_selecionado['images'].values[0]['logo']['url']
+        st.image(url_imagem)
     except:
         url_imagem = df_box_selecionado['images'].values[0]['primary']['url']
-    st.image(url_imagem)
+        st.image(url_imagem)
+    
                       
 
 # Limpeza e tratamento dos dados
