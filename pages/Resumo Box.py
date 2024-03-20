@@ -56,5 +56,3 @@ try:
 except:
   st.subheader('Não há dados sobre este box na Open 2024')
 
-
-dados
