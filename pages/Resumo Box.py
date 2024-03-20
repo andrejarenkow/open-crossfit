@@ -41,6 +41,9 @@ with st.sidebar:
     pais = 'BR'
     cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique(), default=['PORTO ALEGRE'])
     box = st.selectbox('Qual box você deseja ver as estatísticas?', options=df[df['city'].isin(cidade)]['name'])
+    df_box_selecionado = df[df['name']==box]
+    url_imagem = df_box_selecionado['images']['primary']['url']
+    st.image(url_imagem)
                       
 
 # Limpeza e tratamento dos dados
@@ -51,7 +54,7 @@ dados['score_2'] = pd.to_numeric(dados['score_2'], errors='coerce')
 
 try:
     dados_box = dados[dados['affiliateName']==box]
-
+    
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
     st.metric('Total atletas',total_alunos_inscritos)
