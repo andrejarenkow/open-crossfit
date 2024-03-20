@@ -241,9 +241,6 @@ fig_3.update_layout(
 )
 
 # Show us the work!
-fig.show()
-
-# Show us the work!
 st.subheader(f'Comparativo Open 2024, Categorias {categoria}, {cidade}')
 col1, col2, col3 = st.columns(3)
 col1.plotly_chart(fig_1)
