@@ -36,13 +36,13 @@ df = pd.concat([df,map], axis=1)
 df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
-df
 
-cidade = st.selectbox('Selecione a cidade', options=['PORTO ALEGRE', 'CAXIAS DO SUL'], index=None)
+
+cidade = st.multiselect('Selecione a cidade', options=['PORTO ALEGRE', 'CAXIAS DO SUL'], ['PORTO ALEGRE', 'CAXIAS DO SUL'])
 categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
 
-df_afiliados_cidade = df[df['city']==cidade]
+df_afiliados_cidade = df[df['city'].isin(cidade)]
 lista_afiliados = sorted(df_afiliados_cidade['name'].values)
 
 
