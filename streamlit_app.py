@@ -210,7 +210,7 @@ for afiliado in lista_afiliados:
     lista_samples.append(scores_afiliado)
     mediana = int(np.median(scores_afiliado))
     inscritos = len(scores_afiliado)
-    lista_nomes_afiliados_selecionados.append(f'{afiliado} - Mediana {mediana} segundos - {inscritos} atletas')
+    lista_nomes_afiliados_selecionados.append(f'{afiliado}')# - Mediana {mediana} segundos - {inscritos} atletas')
 
 
 # Not only does 'ridgeplot(...)' come configured with sensible defaults
@@ -221,17 +221,17 @@ fig_3 = ridgeplot(
     kde_points=np.linspace(750, 1500, 500),
     colorscale="viridis",
     colormode="row-index",
-    coloralpha=1,
+    coloralpha=0.8,
     labels=lista_nomes_afiliados_selecionados,
     linewidth=2,
-    spacing=1,
+    spacing=0.5,
 )
 
 # Again, update the figure layout to your liking here
 fig_3.update_layout(
     title=f"WOD Open 24.3",
-    height=650,
-    width=800,
+    height=1000,
+    width=400,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
