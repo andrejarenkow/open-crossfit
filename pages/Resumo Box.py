@@ -99,7 +99,7 @@ try:
     fig_categorias.update_xaxes(type='category')
     c2.plotly_chart(fig_categorias)
     
-    dados_tabela_box = dados_box[['competitorName', 'profilePicS3key', 'affiliateName', 'age', 'scale_descrito_1', 'scordeDisplay_1','scale_descrito_2', 'scordeDisplay_2','scale_descrito_3', 'scordeDisplay_3']]
+    dados_tabela_box = dados_box[['competitorName', 'profilePicS3key', 'affiliateName', 'age', 'scale_descrito_1', 'scoreDisplay_1','scale_descrito_2', 'scoreDisplay_2','scale_descrito_3', 'scoreDisplay_3']]
     dados_tabela_box
 
 except:
