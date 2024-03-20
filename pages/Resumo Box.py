@@ -82,9 +82,9 @@ try:
     st.plotly_chart(fig_gender)
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
-    df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', '24.1'),
-                           df_grafico_barras(dados_box, 'scaled_descrito_2', '24.2'),
-                           df_grafico_barras(dados_box, 'scaled_descrito_3', '24.3')])
+    df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', ' 24.1 '),
+                           df_grafico_barras(dados_box, 'scaled_descrito_2', ' 24.2 '),
+                           df_grafico_barras(dados_box, 'scaled_descrito_3', ' 24.3 ')])
     # Criando a tabela dinâmica
     df_barras = df_barras.value_counts(['Categoria','Prova']).reset_index()
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
