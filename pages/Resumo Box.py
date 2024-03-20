@@ -63,6 +63,8 @@ try:
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
     st.metric('Total atletas',total_alunos_inscritos)
+    fig_gender = px.pie(dados_box, names='gender')
+    st.plotly_chart(fig_gender)
     dados_box
 
 except:
