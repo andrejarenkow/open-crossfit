@@ -13,7 +13,7 @@ st.set_page_config(
 ) 
 col1, col2, col3 = st.columns([1,4,1])
 
-col2.header('Open Crossfit 24')
+
 
 
 # Função para acessar os valores da lista
@@ -72,6 +72,7 @@ def df_grafico_barras(df, coluna, nome_prova):
 
 try:
     dados_box = dados[dados['affiliateName']==box]
+    col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
