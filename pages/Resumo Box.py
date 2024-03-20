@@ -85,7 +85,14 @@ try:
     df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', '24.1'),
                            df_grafico_barras(dados_box, 'scaled_descrito_2', '24.2'),
                            df_grafico_barras(dados_box, 'scaled_descrito_3', '24.3')])
-    df_barras
+    # Criando a tabela dinâmica
+    df_barras = pd.pivot_table(df_barras, values='Prova', index='Categoria', columns='Prova', aggfunc='count', fill_value=0)
+    df_barras.reset_index(inplace=True)
+    df_barras.columns.name = None
+    df_barras.columns = ['Categoria', 'Prova', 'Contagem']
+    fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria")
+    st.plotly_chart(fig_categorias)
+    
     dados_box
 
 except:
