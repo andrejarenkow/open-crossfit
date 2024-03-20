@@ -42,7 +42,7 @@ with st.sidebar:
     cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique(), default=['PORTO ALEGRE'])
     box = st.selectbox('Qual box você deseja ver as estatísticas?', options=df[df['city'].isin(cidade)]['name'])
     df_box_selecionado = df[df['name']==box]
-    url_imagem = df_box_selecionado['images'].values[0]['primary']['url']
+    url_imagem = df_box_selecionado['images'].values[0]['logo']['url']
     st.image(url_imagem)
                       
 
