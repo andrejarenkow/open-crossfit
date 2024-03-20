@@ -89,6 +89,8 @@ try:
     df_barras = df_barras.value_counts(['Categoria','Prova']).reset_index()
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
     fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria", title='Número de atletas por categoria por prova')
+    # Definindo o tipo de eixo x como 'category'
+    fig_categorias.update_xaxes(type='category')
     st.plotly_chart(fig_categorias)
     
     dados_box
