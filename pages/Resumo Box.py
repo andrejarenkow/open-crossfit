@@ -63,8 +63,8 @@ dados['score_2'] = pd.to_numeric(dados['score_2'], errors='coerce')
 dados['score_3'] = pd.to_numeric(dados['score_3'], errors='coerce')
 
 # Função para criar o gráfico de barras
-def df_grafico_barras(coluna, nome_prova):
-    df_novo = pd.DataFrame(dados[coluna])
+def df_grafico_barras(df, coluna, nome_prova):
+    df_novo = pd.DataFrame(df[coluna])
     df_novo['Prova'] = nome_prova
 
     return df_novo
@@ -81,7 +81,9 @@ try:
     st.plotly_chart(fig_gender)
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
-    df_barras = pd.concat([df_grafico_barras(scaled_descrito_1, '24.1'), df_grafico_barras(scaled_descrito_2, '24.2'),df_grafico_barras(scaled_descrito_3, '24.3')])
+    df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', '24.1'),
+                           df_grafico_barras(dados_box'scaled_descrito_2', '24.2'),
+                           df_grafico_barras(dados_box,'scaled_descrito_3', '24.3')])
     df_barras
     dados_box
 
