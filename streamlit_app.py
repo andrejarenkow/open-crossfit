@@ -160,7 +160,7 @@ fig_2 = ridgeplot(
     colormode="row-index",
     coloralpha=0.8,
     labels=lista_nomes_afiliados_selecionados,
-    linewidth=0.1,
+    linewidth=1,
     spacing=0.5,
 )
 
