@@ -10,7 +10,7 @@ st.set_page_config(
     page_title="Open Crossfit",
     page_icon="	:weight_lifter:",
     layout="wide",
-    initial_sidebar_state='collapsed'
+    initial_sidebar_state='expanded'
 ) 
 col1, col2, col3 = st.columns([1,4,1])
 
