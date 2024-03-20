@@ -14,9 +14,22 @@ st.set_page_config(
 ) 
 col1, col2, col3 = st.columns([1,4,1])
 
-#col1.image('logo_cevs (1).png', width=200)
+# Using object notation
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
+
+# Using "with" notation
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
+    )
+
+
 col2.header('Open Crossfit 24')
-#col3.image('logo_estado (3).png', width=300)
+
 
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
