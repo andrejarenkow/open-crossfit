@@ -71,10 +71,11 @@ def df_grafico_barras(df, coluna, nome_prova):
     return df_novo
 
 try:
-    c1, c2 = st.columns(2)
     dados_box = dados[dados['affiliateName']==box]
     col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
+    # Layout
+    c1, c2 = st.columns(2)
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
     st.metric('Total atletas',total_alunos_inscritos)
