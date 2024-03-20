@@ -82,7 +82,7 @@ try:
 
     # Gráfico de pizza por gênero
     fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero', width=400, color='gender',
-                        color_discrete_map={'F':'indianred', 'M':'cyan'})
+                        color_discrete_map={'F':'indianred', 'M':'royalblue'})
     c1.plotly_chart(fig_gender, )
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
