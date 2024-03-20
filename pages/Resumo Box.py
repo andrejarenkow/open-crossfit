@@ -64,7 +64,7 @@ dados['score_3'] = pd.to_numeric(dados['score_3'], errors='coerce')
 
 # Função para criar o gráfico de barras
 def df_grafico_barras(df, coluna, nome_prova):
-    df_novo = pd.DataFrame(df[coluna])
+    df_novo = pd.DataFrame(df[coluna], columns=['Categoria'])
     df_novo['Prova'] = nome_prova
 
     return df_novo
