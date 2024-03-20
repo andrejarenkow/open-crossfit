@@ -37,7 +37,7 @@ df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
 
-
+pais = st.selectbox('Selecione o país', options=sorted(df['country']))
 cidade = st.multiselect('Selecione a cidade', options=['PORTO ALEGRE', 'CAXIAS DO SUL'], default = ['PORTO ALEGRE', 'CAXIAS DO SUL'])
 categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
