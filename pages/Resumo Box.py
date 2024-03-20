@@ -81,7 +81,7 @@ try:
     st.metric('Total atletas',total_alunos_inscritos)
 
     # Gráfico de pizza por gênero
-    fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero', width=400,
+    fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero', width=400, color='gender',
                         color_discrete_map={'F':'indianred', 'M':'cyan'})
     c1.plotly_chart(fig_gender, )
 
