@@ -82,8 +82,8 @@ try:
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
     df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', '24.1'),
-                           df_grafico_barras(dados_box'scaled_descrito_2', '24.2'),
-                           df_grafico_barras(dados_box,'scaled_descrito_3', '24.3')])
+                           df_grafico_barras(dados_box, 'scaled_descrito_2', '24.2'),
+                           df_grafico_barras(dados_box, 'scaled_descrito_3', '24.3')])
     df_barras
     dados_box
 
