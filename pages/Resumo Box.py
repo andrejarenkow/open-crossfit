@@ -71,6 +71,7 @@ def df_grafico_barras(df, coluna, nome_prova):
     return df_novo
 
 try:
+    c1, c2 = st.columns(2)
     dados_box = dados[dados['affiliateName']==box]
     col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
@@ -80,7 +81,7 @@ try:
 
     # Gráfico de pizza por gênero
     fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero')
-    st.plotly_chart(fig_gender)
+    c1.plotly_chart(fig_gender)
 
     # Gráfico de barras para divisão de quantos foram em qual categoria em cada prova
     df_barras = pd.concat([df_grafico_barras(dados_box, 'scaled_descrito_1', '24.1'),
@@ -92,7 +93,7 @@ try:
     fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria", title='Número de atletas por categoria por prova')
     # Definindo o tipo de eixo x como 'category'
     fig_categorias.update_xaxes(type='category')
-    st.plotly_chart(fig_categorias)
+    c2.plotly_chart(fig_categorias)
     
     dados_box
 
