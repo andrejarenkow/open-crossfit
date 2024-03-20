@@ -36,8 +36,9 @@ df = pd.concat([df,map], axis=1)
 df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
+lista_cidades = sorted(df['city'].unique())
 
-cidade = st.selectbox('Selecione a cidade', options=sorted(df['city'].unique()), index=None)
+cidade = st.selectbox('Selecione a cidade', options=['PORTO ALEGRE', 'CAXIAS DO SUL'], index=None)
 categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
 
