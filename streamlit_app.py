@@ -96,14 +96,14 @@ fig = ridgeplot(
 
 # Again, update the figure layout to your liking here
 fig.update_layout(
-    title=f"Comparativo Open 24.1, {categoria}, {cidade}",
+    title=f"Comparativo Open 24.2, {categoria}, {cidade}",
     height=650,
     width=800,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
     xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
     yaxis_title="Nome do box",
-    xaxis_title="Tempo (segundos)",
+    xaxis_title="Repetições",
     showlegend=False
 )
 
