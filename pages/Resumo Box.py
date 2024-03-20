@@ -74,11 +74,12 @@ try:
     dados_box = dados[dados['affiliateName']==box]
     col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
-    # Layout
-    c1, c2 = st.columns(2)
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
-    st.metric('Total atletas',total_alunos_inscritos)
+    st.metric('Total atletas',total_alunos_inscritos)    
+    # Layout
+    c1, c2 = st.columns(2)
+
 
     # Gráfico de pizza por gênero
     fig_gender = px.pie(dados_box, names='gender', title='Divisão de atletas por gênero', width=400, color='gender',
