@@ -172,8 +172,80 @@ fig_2.update_layout(
     showlegend=False
 )
 
+# 24.3
+dados['score_3'] = pd.to_numeric(dados['score_3'])
+dados_fizeram_3 = dados[dados['score_3']>0].reset_index(drop=True)
+
+scores = dados_fizeram_3['scoreDisplay_3'].str.split(' reps', expand=True)[0].str.replace(' - s','').str.replace(' - f','')
+segundos = []
+for i in scores:
+  #print(i)
+  if len(i.split(':'))>1:
+    score = int(i.split(':')[0])*60+int(i.split(':')[1])
+
+  else:
+    score = (180-int(i))*3+15*60
+
+  segundos.append(score)
+
+dados_fizeram_3['score_segundos'] = segundos
+
+dados_fizeram_3['Taura'] = ['Taura' if affiliate == 'Taura CrossFit' else 'Outros' for affiliate in dados_fizeram_3['affiliateName']]
+dados_fizeram_3['scaled_descrito_3'] = dados_fizeram_3['scaled_3'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
+
+# Definindo a função para criar o array que vai no gráfico
+def valores_array_box(nome_box, categoria):
+  scores = pd.Series(dados_fizeram_3[(dados_fizeram_3['affiliateName']==nome_box)&(dados_fizeram_3['scaled_descrito_3'].isin(categoria))]['score_segundos'], name=nome_box).to_numpy()
+
+  return scores
+
+# Criar uma lista para botar o samples do Ridgeplot
+lista_samples = []
+lista_nomes_afiliados_selecionados = []
+
+
+for afiliado in lista_afiliados:
+  scores_afiliado = valores_array_box(afiliado, categoria)
+  if len(scores_afiliado)>2:
+    lista_samples.append(scores_afiliado)
+    mediana = int(np.median(scores_afiliado))
+    inscritos = len(scores_afiliado)
+    lista_nomes_afiliados_selecionados.append(f'{afiliado} - Mediana {mediana} segundos - {inscritos} atletas')
+
+
+# Not only does 'ridgeplot(...)' come configured with sensible defaults
+# but is also fully configurable to your own style and preference!
+fig_3 = ridgeplot(
+    samples=lista_samples,
+    #bandwidth=4,
+    kde_points=np.linspace(750, 1500, 500),
+    colorscale="viridis",
+    colormode="row-index",
+    coloralpha=1,
+    labels=lista_nomes_afiliados_selecionados,
+    linewidth=2,
+    spacing=1,
+)
+
+# Again, update the figure layout to your liking here
+fig_3.update_layout(
+    title=f"WOD Open 24.3",
+    height=650,
+    width=800,
+    plot_bgcolor="rgba(255, 255, 255, 0.0)",
+    xaxis_gridcolor="rgba(0, 0, 0, 0.1)",
+    yaxis_gridcolor="rgba(0, 0, 0, 0.1)",
+    yaxis_title="Nome do box",
+    xaxis_title="Tempo (segundos)",
+    showlegend=False
+)
+
+# Show us the work!
+fig.show()
+
 # Show us the work!
 st.subheader(f'Comparativo Open 2024, Categorias {categoria}, {cidade}')
 col1, col2, col3 = st.columns(3)
 col1.plotly_chart(fig_1)
 col2.plotly_chart(fig_2)
+col3.plotly_chart(fig_3)
