@@ -222,7 +222,7 @@ for afiliado in lista_afiliados:
 fig_3 = ridgeplot(
     samples=lista_samples,
     #bandwidth=4,
-    kde_points=np.linspace(750, 1500, 500),
+    kde_points=np.linspace(300, 1500, 500),
     colorscale="viridis",
     colormode="row-index",
     coloralpha=0.8,
