@@ -56,7 +56,7 @@ dados['score_2'] = pd.to_numeric(dados['score_2'], errors='coerce')
 dados_fizeram_2 = dados[dados['score_2']>0].reset_index(drop=True)
 scores = dados_fizeram_2['scoreDisplay_2'].str.split(' reps', expand=True)[0].str.replace(' - s','').str.replace(' - f','')
 dados_fizeram_2['score_reps'] = pd.to_numeric(scores)
-dados_fizeram_2['scaled_descrito_2'] = dados_fizeram_1['scaled_2'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
+dados_fizeram_2['scaled_descrito_2'] = dados_fizeram_2['scaled_2'].replace({'0':'RX', '1':'Scale', '2':'Foundations'})
 
 # Plotando 24.2
 # Definindo a função para criar o array que vai no gráfico
