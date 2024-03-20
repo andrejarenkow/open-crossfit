@@ -41,8 +41,8 @@ df['city'] = df['city'].str.strip().str.upper()
 
 # Using "with" notation
 with st.sidebar:
-    pais = st.selectbox('Selecione o país', options=sorted(df['country'].unique()), index=17)
-    cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique())
+    pais = 'BR'
+    cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique(), ['PORTO ALEGRE'])
     categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
 
