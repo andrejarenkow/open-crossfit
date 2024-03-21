@@ -74,7 +74,7 @@ try:
     col2.header(f'Open Crossfit 24 - Estatísticas {box}, {total_atletas_box} atletas')
     
     # Layout
-    c1, c2 = st.columns(2)
+    c1, c2, c3 = st.columns(3)
 
 
     # Gráfico de pizza por gênero
@@ -94,6 +94,29 @@ try:
     # Definindo o tipo de eixo x como 'category'
     fig_categorias.update_xaxes(type='category')
     c2.plotly_chart(fig_categorias)
+
+    # Plotando distribuição de faixa etária
+    # Definir faixas etárias de 10 em 10 anos
+    faixas_etarias = range(10, 81, 5)
+    
+    # Criar coluna com faixas etárias
+    dados_tabela_box['faixa_etaria'] = pd.cut(dados_tabela_box['age'], bins=faixas_etarias)
+    
+    # Contar o número de registros em cada faixa etária
+    contagem_faixas = dados_tabela_box['faixa_etaria'].value_counts().sort_index().reset_index()
+    contagem_faixas.columns = ['Faixa Etária', 'Número de Pessoas']
+    
+    # Converter faixas etárias para strings
+    contagem_faixas['Faixa Etária'] = contagem_faixas['Faixa Etária'].astype(str)
+    
+    # Plotar o histograma com o Plotly Express
+    fig = px.bar(contagem_faixas, x='Faixa Etária', y='Número de Pessoas',
+                 labels={'Faixa Etária': 'Faixa Etária', 'Número de Pessoas': 'Número de Pessoas'},
+                 title='Histograma de Faixas Etárias')
+    fig.update_xaxes(type='category')
+    c3.plotly_chart(fig)
+
+    # Tabela
     dados_tabela_box = dados_box[['competitorName','imagem_perfil', 'affiliateName', 'age','scaled_descrito_1','scoreDisplay_1','scaled_descrito_2', 'scoreDisplay_2','scaled_descrito_3', 'scoreDisplay_3']]
     st.dataframe(dados_tabela_box.sort_values('competitorName'),
                  column_config={
@@ -121,22 +144,4 @@ with st.sidebar:
     st.markdown('Página criada por [André Jarenkow](https://www.linkedin.com/in/andre-jarenkow/)')
 
 
-# Definir faixas etárias de 10 em 10 anos
-faixas_etarias = range(10, 81, 5)
 
-# Criar coluna com faixas etárias
-dados_box['faixa_etaria'] = pd.cut(dados_box['age'], bins=faixas_etarias)
-
-# Contar o número de registros em cada faixa etária
-contagem_faixas = dados_box['faixa_etaria'].value_counts().sort_index().reset_index()
-contagem_faixas.columns = ['Faixa Etária', 'Número de Pessoas']
-
-# Converter faixas etárias para strings
-contagem_faixas['Faixa Etária'] = contagem_faixas['Faixa Etária'].astype(str)
-
-# Plotar o histograma com o Plotly Express
-fig = px.bar(contagem_faixas, x='Faixa Etária', y='Número de Pessoas',
-             labels={'Faixa Etária': 'Faixa Etária', 'Número de Pessoas': 'Número de Pessoas'},
-             title='Histograma de Faixas Etárias')
-fig.update_xaxes(type='category')
-st.plotly_chart(fig)
