@@ -33,8 +33,8 @@ avançam para as próximas etapas das competições CrossFit Games, onde competi
 c1, c2 = st.columns(2)
 
 c1.markdown(texto)
-c1.page_link("pages/1_Estatísticas_do_Box.py", label="Estatísticas de cada Box", icon="🏠")
-c1.page_link("pages/2_Comparativo Box.py", label="Comparativo entre Box", icon="🆚")
+c1.page_link("pages/1_Estatísticas_do_Box.py", label="Estatísticas de cada Box no Open 2024", icon="🏠")
+c1.page_link("pages/2_Comparativo Box.py", label="Comparativo entre Box no Open 2024", icon="🆚")
 
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
