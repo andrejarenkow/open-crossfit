@@ -14,9 +14,6 @@ st.set_page_config(
 ) 
 col1, col2, col3 = st.columns([1,4,1])
 
-
-
-
 col2.header('Open Crossfit 24')
 
 
@@ -43,7 +40,7 @@ df['city'] = df['city'].str.strip().str.upper()
 with st.sidebar:
     st.subheader('OPEN 2024')
     pais = 'BR'
-    cidade = st.multiselect('Selecione a cidade', options=df[df['country']==pais]['city'].unique(), default=['PORTO ALEGRE'])
+    cidade = st.multiselect('Selecione a cidade', options=sorted(df[df['country']==pais]['city'].unique()), default=['PORTO ALEGRE'])
     categoria = st.multiselect('Selecione quais categorias você quer comparar', ['Foundations', 'Scale', 'RX'], ['RX'])
                       
 
