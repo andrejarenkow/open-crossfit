@@ -73,9 +73,6 @@ try:
     dados_box['imagem_perfil'] = dados_box['profilePicS3key'].apply(lambda x: 'https://profilepicsbucket.crossfit.com/' + x)
     col2.header(f'Open Crossfit 24 - Estatísticas {box}, {total_atletas_box} atletas')
     
-    #total alunos inscritos
-    total_alunos_inscritos = len(dados_box)
-    st.metric('Total atletas',total_alunos_inscritos)    
     # Layout
     c1, c2 = st.columns(2)
 
