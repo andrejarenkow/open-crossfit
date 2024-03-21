@@ -13,9 +13,10 @@ st.set_page_config(
     initial_sidebar_state='expanded'
 ) 
 col1, col2, col3 = st.columns([1,4,1])
-
 col2.header('Open Crossfit 24')
 
+with st.sidebar:
+    st.markdown('Página criada por [André Jarenkow](https://www.linkedin.com/in/andre-jarenkow/)')
 
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
