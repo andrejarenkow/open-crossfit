@@ -90,7 +90,7 @@ try:
     df_barras = df_barras.value_counts(['Categoria','Prova']).reset_index().sort_values('Prova')
     df_barras.columns = ['Categoria', 'Prova', 'Contagem']
     fig_categorias = px.bar(df_barras, x="Prova", y="Contagem", color="Categoria", title='Número de atletas por categoria por prova',
-                           color_discrete_map={'RX':'#03DAC5', 'Scale':'#BB86FC', 'Foundations':'#FF4181'}, width=300)
+                           color_discrete_map={'RX':'#03DAC5', 'Scale':'#BB86FC', 'Foundations':'#FF4181'}, width=400)
     # Definindo o tipo de eixo x como 'category'
     fig_categorias.update_xaxes(type='category')
     c2.plotly_chart(fig_categorias)
@@ -112,7 +112,7 @@ try:
     # Plotar o histograma com o Plotly Express
     fig = px.bar(contagem_faixas, x='Faixa Etária', y='Número de Pessoas',
                  labels={'Faixa Etária': 'Faixa Etária', 'Número de Pessoas': 'Número de Pessoas'},
-                 title='Histograma de Faixas Etárias')
+                 title='Histograma de Faixas Etárias', , width=400)
     fig.update_xaxes(type='category')
     c3.plotly_chart(fig)
 
