@@ -69,7 +69,7 @@ def df_grafico_barras(df, coluna, nome_prova):
 
 try:
     dados_box = dados[dados['affiliateName']==box]
-    dados_box['imagem_perfil'] == dados_box['profilePicS3key'].apply(lambda x: 'https://profilepicsbucket.crossfit.com/' + x)
+    dados_box['imagem_perfil'] = dados_box['profilePicS3key'].apply(lambda x: 'https://profilepicsbucket.crossfit.com/' + x)
     col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
     #total alunos inscritos
@@ -96,7 +96,7 @@ try:
     # Definindo o tipo de eixo x como 'category'
     fig_categorias.update_xaxes(type='category')
     c2.plotly_chart(fig_categorias)
-    
+    dados_box
     dados_tabela_box = dados_box[['competitorName','imagem_perfil', 'affiliateName', 'age','scaled_descrito_1','scoreDisplay_1','scaled_descrito_2', 'scoreDisplay_2','scaled_descrito_3', 'scoreDisplay_3']]
     st.dataframe(dados_tabela_box,
                  column_config={
