@@ -114,7 +114,7 @@ try:
     },
     hide_index=True,
                 )
-
+    dados_box
 except:
   st.subheader('Não há dados sobre este box na Open 2024')
 
