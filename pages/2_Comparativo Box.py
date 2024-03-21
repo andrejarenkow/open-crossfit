@@ -15,8 +15,7 @@ st.set_page_config(
 col1, col2, col3 = st.columns([1,4,1])
 col2.header('Open Crossfit 24')
 
-with st.sidebar:
-    st.markdown('Página criada por [André Jarenkow](https://www.linkedin.com/in/andre-jarenkow/)')
+
 
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
@@ -249,3 +248,7 @@ col1, col2, col3 = st.columns(3)
 col1.plotly_chart(fig_1)
 col2.plotly_chart(fig_2)
 col3.plotly_chart(fig_3)
+
+
+with st.sidebar:
+    st.markdown('Página criada por [André Jarenkow](https://www.linkedin.com/in/andre-jarenkow/)')
