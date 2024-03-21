@@ -100,10 +100,10 @@ try:
     faixas_etarias = range(10, 81, 5)
     
     # Criar coluna com faixas etárias
-    dados_tabela_box['faixa_etaria'] = pd.cut(dados_tabela_box['age'], bins=faixas_etarias)
+    dados_box['faixa_etaria'] = pd.cut(dados_box['age'], bins=faixas_etarias)
     
     # Contar o número de registros em cada faixa etária
-    contagem_faixas = dados_tabela_box['faixa_etaria'].value_counts().sort_index().reset_index()
+    contagem_faixas = dados_box['faixa_etaria'].value_counts().sort_index().reset_index()
     contagem_faixas.columns = ['Faixa Etária', 'Número de Pessoas']
     
     # Converter faixas etárias para strings
