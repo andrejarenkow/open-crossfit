@@ -13,9 +13,6 @@ st.set_page_config(
 ) 
 col1, col2, col3 = st.columns([2,4,2])
 
-
-
-
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
     return lista[1]
@@ -72,6 +69,7 @@ def df_grafico_barras(df, coluna, nome_prova):
 
 try:
     dados_box = dados[dados['affiliateName']==box]
+    dados_box['imagem_perfil'] == dados_box['profilePicS3key'].apply(lambda x: 'https://profilepicsbucket.crossfit.com/' + x)
     col2.header(f'Open Crossfit 24 - Estatísticas {box}')
     
     #total alunos inscritos
@@ -99,11 +97,11 @@ try:
     fig_categorias.update_xaxes(type='category')
     c2.plotly_chart(fig_categorias)
     
-    dados_tabela_box = dados_box[['competitorName','profilePicS3key', 'affiliateName', 'age','scaled_descrito_1','scoreDisplay_1','scaled_descrito_2', 'scoreDisplay_2','scaled_descrito_3', 'scoreDisplay_3']]
+    dados_tabela_box = dados_box[['competitorName','imagem_perfil', 'affiliateName', 'age','scaled_descrito_1','scoreDisplay_1','scaled_descrito_2', 'scoreDisplay_2','scaled_descrito_3', 'scoreDisplay_3']]
     st.dataframe(dados_tabela_box,
-                 #column_config={
-                 #   "profilePicS3key": st.column_config.ImageColumn(
-                 #                       "Imagem",
+                 column_config={
+                    "imagem_perfil": st.column_config.ImageColumn(
+                                        "Imagem",
         #)
     #},
     hide_index=True,
