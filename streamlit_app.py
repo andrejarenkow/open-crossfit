@@ -53,7 +53,7 @@ df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
 
-fig = px.scatter_mapbox(df, lat="lat", lon="lon", hover_name="name", #hover_data=["State", "Population"],
+fig = px.scatter_mapbox(df, lat="lat", lon="lon", hover_name="name", hover_data=["city", "country"],
                         zoom=0, height=600)
 fig.update_layout(mapbox_style="carto-darkmatter")
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
