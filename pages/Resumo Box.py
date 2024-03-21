@@ -101,7 +101,16 @@ try:
                  column_config={
                     "imagem_perfil": st.column_config.ImageColumn(
                                         "Imagem",
-        )
+        ),
+                     'competitorName':st.column_config.Column('Atleta'),
+                     'affiliateName':st.column_config.Column('Afiliado'),
+                     'age':st.column_config.NumberColumn('Idade'),
+                     'scaled_descrito_1':st.column_config.Column('Categoria 24.1'),
+                     'scoreDisplay_1':st.column_config.Column('Score 24.1'),
+                     'scaled_descrito_2':st.column_config.Column('Categoria 24.2'),
+                     'scoreDisplay_2':st.column_config.Column('Score 24.2'),
+                     'scaled_descrito_3':st.column_config.Column('Categoria 24.3'),
+                     'scoreDisplay_3':st.column_config.Column('Score 24.3'),
     },
     hide_index=True,
                 )
