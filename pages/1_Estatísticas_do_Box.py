@@ -122,7 +122,7 @@ with st.sidebar:
 
 
 # Definir faixas etárias de 10 em 10 anos
-faixas_etarias = range(10, 81, 10)
+faixas_etarias = range(10, 81, 5)
 
 # Criar coluna com faixas etárias
 dados_box['faixa_etaria'] = pd.cut(dados_box['age'], bins=faixas_etarias)
