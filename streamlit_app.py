@@ -30,7 +30,9 @@ Ao final das cinco semanas, os resultados são tabulados e os melhores atletas d
 avançam para as próximas etapas das competições CrossFit Games, onde competirão contra os melhores do mundo em busca do título de "Fittest on Earth" (Mais em Forma da Terra).
 """
 
-st.markdown(texto)
+c1, c2 = st.columns(2)
+
+c1.markdown(texto)
 
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
