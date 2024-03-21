@@ -119,3 +119,24 @@ except:
 
 with st.sidebar:
     st.markdown('Página criada por [André Jarenkow](https://www.linkedin.com/in/andre-jarenkow/)')
+
+
+# Definir faixas etárias de 10 em 10 anos
+faixas_etarias = range(10, 81, 10)
+
+# Criar coluna com faixas etárias
+dados_box['faixa_etaria'] = pd.cut(dados_box['age'], bins=faixas_etarias)
+
+# Contar o número de registros em cada faixa etária
+contagem_faixas = dados_box['faixa_etaria'].value_counts().sort_index().reset_index()
+contagem_faixas.columns = ['Faixa Etária', 'Número de Pessoas']
+
+# Converter faixas etárias para strings
+contagem_faixas['Faixa Etária'] = contagem_faixas['Faixa Etária'].astype(str)
+
+# Plotar o histograma com o Plotly Express
+fig = px.bar(contagem_faixas, x='Faixa Etária', y='Número de Pessoas',
+             labels={'Faixa Etária': 'Faixa Etária', 'Número de Pessoas': 'Número de Pessoas'},
+             title='Histograma de Faixas Etárias')
+fig.update_xaxes(type='category')
+st.plotly_chart(fig)
