@@ -28,6 +28,8 @@ Além disso, o Open é uma oportunidade para os competidores se desafiarem, esta
 
 Ao final das cinco semanas, os resultados são tabulados e os melhores atletas de cada categoria (individual, times, idade etc.)
 avançam para as próximas etapas das competições CrossFit Games, onde competirão contra os melhores do mundo em busca do título de "Fittest on Earth" (Mais em Forma da Terra).
+
+Foram desenvolvidas dias páginas que ajudam a entender melhor como foi cada box na competição de 2024.
 """
 
 c1, c2 = st.columns(2)
