@@ -112,7 +112,7 @@ try:
     # Plotar o histograma com o Plotly Express
     fig = px.bar(contagem_faixas, x='Faixa Etária', y='Número de Pessoas',
                  labels={'Faixa Etária': 'Faixa Etária', 'Número de Pessoas': 'Número de Pessoas'},
-                 title='Histograma de Faixas Etárias', , width=400)
+                 title='Histograma de Faixas Etárias', width=400)
     fig.update_xaxes(type='category')
     c3.plotly_chart(fig)
 
