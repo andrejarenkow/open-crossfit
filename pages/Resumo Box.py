@@ -69,8 +69,9 @@ def df_grafico_barras(df, coluna, nome_prova):
 
 try:
     dados_box = dados[dados['affiliateName']==box]
+    total_atletas_box = len(dados_box)
     dados_box['imagem_perfil'] = dados_box['profilePicS3key'].apply(lambda x: 'https://profilepicsbucket.crossfit.com/' + x)
-    col2.header(f'Open Crossfit 24 - Estatísticas {box}')
+    col2.header(f'Open Crossfit 24 - Estatísticas {box}, {total_atletas_box} atletas')
     
     #total alunos inscritos
     total_alunos_inscritos = len(dados_box)
@@ -114,7 +115,7 @@ try:
     },
     hide_index=True,
                 )
-    dados_box
+    #dados_box
 except:
   st.subheader('Não há dados sobre este box na Open 2024')
 
