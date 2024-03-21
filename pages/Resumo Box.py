@@ -102,8 +102,8 @@ try:
                  column_config={
                     "imagem_perfil": st.column_config.ImageColumn(
                                         "Imagem",
-        #)
-    #},
+        )
+    },
     hide_index=True,
                 )
 
