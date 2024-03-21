@@ -243,7 +243,7 @@ fig_3.update_layout(
 )
 
 # Show us the work!
-st.subheader(f'Comparativo Open 2024, Categorias {categoria}, {cidade}')
+st.subheader(f'Comparativo Open 2024, Categorias {", ".join(categoria)}, {", ".join(cidade)}')
 col1, col2, col3 = st.columns(3)
 col1.plotly_chart(fig_1)
 col2.plotly_chart(fig_2)
