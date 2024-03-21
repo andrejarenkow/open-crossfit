@@ -96,7 +96,6 @@ try:
     # Definindo o tipo de eixo x como 'category'
     fig_categorias.update_xaxes(type='category')
     c2.plotly_chart(fig_categorias)
-    dados_box
     dados_tabela_box = dados_box[['competitorName','imagem_perfil', 'affiliateName', 'age','scaled_descrito_1','scoreDisplay_1','scaled_descrito_2', 'scoreDisplay_2','scaled_descrito_3', 'scoreDisplay_3']]
     st.dataframe(dados_tabela_box,
                  column_config={
