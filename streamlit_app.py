@@ -234,7 +234,7 @@ fig_3 = ridgeplot(
 
 # Again, update the figure layout to your liking here
 fig_3.update_layout(
-    title=f"WOD Open 24.3",
+    title=f"WOD 24.3",
     height=1000,
     width=400,
     plot_bgcolor="rgba(255, 255, 255, 0.0)",
