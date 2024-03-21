@@ -1,9 +1,8 @@
 import pandas as pd
 import plotly.express as px
 import requests
-import numpy as np
 import streamlit as st
-from ridgeplot import ridgeplot
+
 
 # Configurações da página
 st.set_page_config(
@@ -13,10 +12,6 @@ st.set_page_config(
     initial_sidebar_state='expanded'
 ) 
 col1, col2, col3 = st.columns([1,4,1])
-
-
-
-
 col2.header('Open Crossfit 24')
 
 st.subheader('aaaa')
