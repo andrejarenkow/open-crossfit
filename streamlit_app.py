@@ -34,7 +34,7 @@ c1, c2 = st.columns(2)
 
 c1.markdown(texto)
 c1.page_link("pages/1_Estatísticas_do_Box.py", label="Estatísticas de cada Box", icon="🏠")
-c1.page_link("pages/2_Comparativo Box.py", label="Comparativo entre Box", icon="1️⃣")
+c1.page_link("pages/2_Comparativo Box.py", label="Comparativo entre Box", icon="🆚")
 
 # Função para acessar os valores da lista
 def acessar_latitude(lista):
