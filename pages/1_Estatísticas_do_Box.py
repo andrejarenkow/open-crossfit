@@ -116,3 +116,6 @@ try:
 except:
   st.subheader('Não há dados sobre este box na Open 2024')
 
+
+with st.sidebar:
+    st.markdown('Página criada por [André Jarenkow](https://www.linkedin.com/in/andre-jarenkow/)')
