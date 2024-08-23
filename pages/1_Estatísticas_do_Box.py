@@ -36,7 +36,7 @@ df['city'] = df['city'].str.strip().str.upper()
 with st.sidebar:
     st.subheader('OPEN 2024')
     pais = 'BR'
-    cidade = st.multiselect('Selecione a cidade', options=sorted(df[df['country']==pais]['city'].unique()), default=['PORTO ALEGRE'])
+    cidade = st.multiselect('Selecione a cidade', options=sorted(df['city'].unique()), default=['PORTO ALEGRE'])
     box = st.selectbox('Qual box você deseja ver as estatísticas?', options=sorted(df[df['city'].isin(cidade)]['name']))
     df_box_selecionado = df[df['name']==box]
     try:
