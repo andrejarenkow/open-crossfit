@@ -35,6 +35,7 @@ df = pd.concat([df,map], axis=1)
 df['lat'] = df['coordinates'].apply(acessar_latitude)
 df['lon'] = df['coordinates'].apply(acessar_longitude)
 df['city'] = df['city'].str.strip().str.upper()
+df
 
 # Using "with" notation
 with st.sidebar:
